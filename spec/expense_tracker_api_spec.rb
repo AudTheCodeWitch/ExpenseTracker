@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'rack/test'
 require 'json'
-require_relative '../app/api.rb'
+require_relative '../app/api'
 
 module ExpenseTracker
   RSpec.describe 'Expense Tracker API' do
@@ -44,7 +46,6 @@ module ExpenseTracker
 
       expenses = JSON.parse(last_response.body)
       expect(expenses).to contain_exactly(coffee, zoo)
-
     end
   end
 end
